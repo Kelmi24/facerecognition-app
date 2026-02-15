@@ -1,0 +1,81 @@
+:root {
+  --primary: #9d5bf5;
+  --primary-dark: #7c3aed;
+  --primary-glow: rgba(157, 91, 245, 0.4);
+  --accent: #9d5bf5;
+  --glass: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --bg-gradient: radial-gradient(circle at 50% -20%, #2b1055 0%, #000000 100%);
+  --success: #10b981;
+  --error: #ef4444;
+  --warning: #f59e0b;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Outfit", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Shared Status Messages */
+.status-message {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  text-align: center;
+  margin: 0.5rem 0;
+  animation: fadeIn 0.3s ease;
+}
+
+.status-message.warning {
+  color: var(--warning);
+}
+
+.error-message {
+  color: var(--error);
+  font-size: 0.85rem;
+  text-align: center;
+  margin: 0.75rem 0 0.25rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}
